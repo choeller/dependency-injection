@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { SearchService } from '../search-service/search.service';
+import {Item, SearchService} from '../search-service/search.service';
 import { videos } from './videos';
 
 @Injectable()
-export class VideoSearchService implements SearchService {
+export class VideoSearchService implements SearchService<Item> {
 
   videos: any[];
 

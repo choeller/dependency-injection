@@ -9,7 +9,7 @@ import {VideoSearchService} from '../../services/video-service/video-search.serv
 })
 export class VideoLibraryComponent  {
   items: Item[];
-  constructor(private searchService: SearchService) {
+  constructor(private searchService: SearchService<Item>) {
     this.items = this.searchService.getAll();
   }
 }

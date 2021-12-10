@@ -9,10 +9,10 @@ import { Item, SearchService } from '../../services/search-service/search.servic
     <input type="text" #query (keyup.enter)="search(query.value)" />
     <button (click)="search(query.value)">Suchen</button>`,
 })
-export class SearchBarComponent {
-  @Output() searchResultChanged = new EventEmitter<Item[]>();
+export class SearchBarComponent<T> {
+  @Output() searchResultChanged = new EventEmitter<T[]>();
 
-  constructor(@Host() @Inject(SearchService) private searchService: SearchService) {
+  constructor(@Host() @Inject(SearchService) private searchService: SearchService<T>) {
     this.searchResultChanged.emit(searchService.getAll());
   }
   search(searchQuery: string) {

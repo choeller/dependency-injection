@@ -1,14 +1,14 @@
-import {Component, ContentChildren, QueryList, AfterContentInit} from '@angular/core';
+import {Component, ContentChildren, QueryList, AfterContentInit, Input} from '@angular/core';
 
 @Component({
   selector: 'ch-tab',
-  inputs: ['title'],
   template: `<div *ngIf="active" class="tab-content">
                  <ng-content></ng-content>
              </div>`
 })
 export class TabComponent {
   active: boolean;
+  @Input() title = '';
   constructor() {
     this.active = false;
   }

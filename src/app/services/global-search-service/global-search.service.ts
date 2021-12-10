@@ -3,7 +3,7 @@ import {SearchService} from '../search-service/search.service';
 
 
 @Injectable()
-export class GlobalSearchService implements SearchService {
+export class GlobalSearchService implements SearchService<any> {
 
   getAll() {
     return [];

@@ -1,6 +1,7 @@
 import { Item } from '../search-service/search.service';
+import {MusicItem} from "./music-item";
 
-export const albums: Item[] = [
+export const albums: MusicItem[] = [
   {
     'artist': 'Nirvana',
     'title': 'Nevermind',

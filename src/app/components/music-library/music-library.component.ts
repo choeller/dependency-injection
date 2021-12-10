@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MusicSearchService} from '../../services/music-search-service/music-search.service';
 import { Item, SearchService } from '../../services/search-service/search.service';
+import {MusicItem} from "../../services/music-search-service/music-item";
 
 @Component({
   selector: 'ch-music-library',
@@ -8,8 +9,8 @@ import { Item, SearchService } from '../../services/search-service/search.servic
   templateUrl: 'music-library.component.html'
 })
 export class MusicLibraryComponent {
-  items: Item[] = [];
-  constructor(private searchService: SearchService) {
+  items: MusicItem[] = [];
+  constructor(private searchService: SearchService<MusicItem>) {
     this.items = this.searchService.getAll();
   }
 
